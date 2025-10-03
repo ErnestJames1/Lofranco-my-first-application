@@ -17,8 +17,8 @@
                 <a href="/about" class="text-gray-700 hover:text-indigo-600">About</a>
                 <a href="/contact" class="text-gray-700 hover:text-indigo-600">Contact</a> --}}
                 <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
-                <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
-                <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
+                <x-nav-link href="/jobs" :active="request()->is('jobs')">Jobs</x-nav-link>
+                {{-- <x-nav-link href="/job" :active="request()->is('job')">Job</x-nav-link> --}}
             </div>
         </div>
     </nav>
