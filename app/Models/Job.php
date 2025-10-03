@@ -1,41 +1,13 @@
 <?php
 
 namespace App\Models;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-class Job
+class Job extends Model
 {
-    public static function all()
-    {
-        return [
-            [
-                'id' => 1,
-                'title' => 'Director',
-                'salary' => 50000,
-            ],
-            [
-                'id' => 2,
-                'title' => 'Programmer',
-                'salary' => 10000,
-            ],
-            [
-                'id' => 3,
-                'title' => 'Teacher',
-                'salary' => 40000,
-            ],
-        ];
-    }
-
-    public static function find($id)
-    {
-        $job = \Illuminate\Support\Arr::first(
-            static::all(),
-            fn($job) => $job['id'] == $id
-        );
-
-        if (! $job) {
-            abort(404);
-        }
-
-        return $job;
-    }
+    use HasFactory;
+    // By convention, Laravel assumes a 'jobs' table.
+    // We need to tell it to use our 'job_listings' table instead.
+    protected $table = 'job_listings';
 }
